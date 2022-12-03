@@ -24,7 +24,7 @@ class _BtmNavigationBar extends State<BtmNavigationBar> {
     const HomePage(),
 
     const SearchProd(),
-    const Description(),
+    Description(),
     const CartPage(),
     const BurgerPage(),
 

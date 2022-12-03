@@ -16,8 +16,8 @@ class Profile extends StatelessWidget {
         InkWell(
           onTap: (() {
             Navigator.pop(context,
-                MaterialPageRoute(builder: (context) => const Description()));
-            Get.to(const Description());
+                MaterialPageRoute(builder: (context) => Description()));
+            Get.to(Description());
           }),
           child: Container(
             height: MediaQuery.of(context).size.height * 0.06,

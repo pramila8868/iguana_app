@@ -1,9 +1,9 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iguana_app/pages/model/page/allpage/background_page.dart';
 import 'package:sizer/sizer.dart';
+
+import 'pages/animation.dart';
 //import 'package:iguana_app/pages/description.dart';
 
 void main() {
@@ -32,12 +32,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Sizer(builder:
         (BuildContext context, Orientation orientation, DeviceType deviceType) {
+      // ignore: prefer_const_constructors
       return GetMaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
-        //  theme: ThemeData(     primarySwatch: Colors.blue,    ),
-        home: BackGroundPage(),
-      );
+          debugShowCheckedModeBanner: false,
+          title: 'Flutter Demo',
+          //  theme: ThemeData(     primarySwatch: Colors.blue,    ),
+          // home: const BackGroundPage(),
+          home: SpashScreen());
     });
   }
 }

@@ -249,7 +249,21 @@ class BackGroundPage extends StatelessWidget {
                         "Search",
                       ),
                     ),
+                    // TextFormField(
+                    //   keyboardType: TextInputType.name,
+                    //   decoration: const InputDecoration(
+                    //       labelText: "Search",
+                    //       fillColor: Colors.white,
+                    //       enabledBorder: OutlineInputBorder(
+                    //         borderSide: BorderSide(
+                    //           color: Colors.black,
+                    //         ),
+                    //         borderRadius: BorderRadius.all(Radius.circular(16.0)),
+                    //       )),
+                    // ),
 
+                    // Container(
+                    //   decoration: const Decoration(
                     //     icon:const Icon(Icons.forward_10),
                     //Image.asset('assets/images/h1-white-A.png',),
 
@@ -303,22 +317,6 @@ class BackGroundPage extends StatelessWidget {
               ],
             ),
           )
-
-          // TextFormField(
-          //   keyboardType: TextInputType.name,
-          //   decoration: const InputDecoration(
-          //       labelText: "Search",
-          //       fillColor: Colors.white,
-          //       enabledBorder: OutlineInputBorder(
-          //         borderSide: BorderSide(
-          //           color: Colors.black,
-          //         ),
-          //         borderRadius: BorderRadius.all(Radius.circular(16.0)),
-          //       )),
-          // ),
-
-          // Container(
-          //   decoration: const Decoration(
 
           //   ),
           // )

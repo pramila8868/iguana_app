@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:iguana_app/pages/model/models/categoriesmodel.dart';
-import 'package:iguana_app/pages/model/page/list/all_list/caregorieslist.dart';
 import 'package:iguana_app/pages/profile.dart';
 import 'package:sizer/sizer.dart';
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:iguana_app/Shoppingcontroller/shoppingcard_controller.dart';
 //import 'package:iguana_app/pages/model/listmodel.dart';
 import 'package:iguana_app/pages/model/page/allpage/background_page.dart';
 import 'package:iguana_app/pages/model/page/allpage/cartpage.dart';
@@ -11,8 +12,8 @@ import 'package:sizer/sizer.dart';
 //import 'naviagation/bottomnavigation.dart';
 
 class Description extends StatelessWidget {
-  const Description({Key? key}) : super(key: key);
-
+  Description({Key? key}) : super(key: key);
+  final ShoppingCartController c = Get.put(ShoppingCartController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -153,36 +154,41 @@ class Description extends StatelessWidget {
             // crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                height: MediaQuery.of(context).size.height * 0.009.h,
-                width: MediaQuery.of(context).size.width * 0.037.w,
-                decoration: BoxDecoration(
-                  color: Colors.grey.shade200,
-                  //  color: const Color(0xfff8f8f8),
+              InkWell(
+                onTap: (() {
+                  c.increment();
+                }),
+                child: Container(
+                  height: MediaQuery.of(context).size.height * 0.009.h,
+                  width: MediaQuery.of(context).size.width * 0.037.w,
+                  decoration: BoxDecoration(
+                    color: Colors.grey.shade200,
+                    //  color: const Color(0xfff8f8f8),
 
-                  borderRadius: BorderRadius.circular(14.0),
-                  // ignore: prefer_const_literals_to_create_immutables
-                  boxShadow: [
-                    const BoxShadow(
-                      color: Colors.grey, //Color(0x29060000),
-                      // offset: Offset(3, 6),
-                      offset: Offset(3, 6),
-                      blurRadius: 6,
-                    ),
-                  ],
-                ),
+                    borderRadius: BorderRadius.circular(14.0),
+                    // ignore: prefer_const_literals_to_create_immutables
+                    boxShadow: [
+                      const BoxShadow(
+                        color: Colors.grey, //Color(0x29060000),
+                        // offset: Offset(3, 6),
+                        offset: Offset(3, 6),
+                        blurRadius: 6,
+                      ),
+                    ],
+                  ),
 
-                // ignore: prefer_const_constructors
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 12),
-                  child: const Text(
-                    '+',
-                    style: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontSize: 22,
-                      color: Colors.black,
+                  // ignore: prefer_const_constructors
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 12),
+                    child: const Text(
+                      '+',
+                      style: TextStyle(
+                        fontFamily: 'Montserrat',
+                        fontSize: 22,
+                        color: Colors.black,
+                      ),
+                      textAlign: TextAlign.center,
                     ),
-                    textAlign: TextAlign.center,
                   ),
                 ),
               ),
@@ -190,45 +196,52 @@ class Description extends StatelessWidget {
                 width: 40,
               ),
               // ignore: prefer_const_constructors
-              const Text(
-                '1',
-                style: TextStyle(
-                  fontFamily: 'Montserrat',
-                  fontSize: 24,
-                  color: Colors.black,
+              Obx(
+                () => Text(
+                  '${c.incenumber.toString()}',
+                  style: TextStyle(
+                    fontFamily: 'Montserrat',
+                    fontSize: 24,
+                    color: Colors.black,
+                  ),
                 ),
               ),
               const SizedBox(
                 width: 40,
               ),
-              Container(
-                height: MediaQuery.of(context).size.height * 0.009.h,
-                width: MediaQuery.of(context).size.width * 0.037.w,
-                decoration: BoxDecoration(
-                  //  color: const Color(0xfff8f8f8),
-                  color: Colors.grey.shade200,
-                  borderRadius: BorderRadius.circular(14.0),
-                  // ignore: prefer_const_literals_to_create_immutables
-                  boxShadow: [
-                    const BoxShadow(
-                      color: Colors.grey, //Color(0x29060000),
-                      offset: Offset(3, 3),
-                      blurRadius: 6,
-                    ),
-                  ],
-                ),
+              InkWell(
+                onTap: (() {
+                  c.decrement();
+                }),
+                child: Container(
+                  height: MediaQuery.of(context).size.height * 0.009.h,
+                  width: MediaQuery.of(context).size.width * 0.037.w,
+                  decoration: BoxDecoration(
+                    //  color: const Color(0xfff8f8f8),
+                    color: Colors.grey.shade200,
+                    borderRadius: BorderRadius.circular(14.0),
+                    // ignore: prefer_const_literals_to_create_immutables
+                    boxShadow: [
+                      const BoxShadow(
+                        color: Colors.grey, //Color(0x29060000),
+                        offset: Offset(3, 3),
+                        blurRadius: 6,
+                      ),
+                    ],
+                  ),
 
-                // ignore: prefer_const_constructors
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 12),
-                  child: const Text(
-                    '-',
-                    style: TextStyle(
-                      fontFamily: 'Montserrat',
-                      fontSize: 22,
-                      color: Colors.black,
+                  // ignore: prefer_const_constructors
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 12),
+                    child: const Text(
+                      "-",
+                      style: TextStyle(
+                        fontFamily: 'Montserrat',
+                        fontSize: 22,
+                        color: Colors.black,
+                      ),
+                      textAlign: TextAlign.center,
                     ),
-                    textAlign: TextAlign.center,
                   ),
                 ),
               ),

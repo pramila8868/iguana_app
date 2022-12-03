@@ -299,7 +299,7 @@ class HomePage extends StatelessWidget {
                     ),
                     InkWell(
                       onTap: (() {
-                        Get.to(const Description());
+                        Get.to(Description());
                       }),
                       child: const Text(
                         "SEE MORE",
